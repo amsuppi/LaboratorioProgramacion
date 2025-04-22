@@ -16,5 +16,9 @@ namespace LaboratorioProgramacion
         {
             InitializeComponent();
         }
+
+        private void frmAbmProductos_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

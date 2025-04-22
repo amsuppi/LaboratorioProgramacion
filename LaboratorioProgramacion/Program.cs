@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace LaboratorioProgramacion
 {
@@ -18,7 +19,7 @@ namespace LaboratorioProgramacion
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmAbmProductos());
 
-            Console.WriteLine("¡Primer cambio en el código, subiéndo a GitHub!");
+            Console.WriteLine("¡Primer commit en el código, subiéndo a GitHub!");
         }
     }
 }

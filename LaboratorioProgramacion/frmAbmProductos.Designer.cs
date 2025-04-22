@@ -194,6 +194,7 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "frmAbmProductos";
             this.Text = "ABM Productos";
+            this.Load += new System.EventHandler(this.frmAbmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCodigo)).EndInit();
             this.ResumeLayout(false);

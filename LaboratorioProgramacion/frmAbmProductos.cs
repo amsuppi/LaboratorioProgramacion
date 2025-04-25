@@ -15,6 +15,21 @@ namespace LaboratorioProgramacion
         public frmAbmProductos()
         {
             InitializeComponent();
+            clsProductos producto = new clsProductos();
+            producto.conexion();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsProductos producto = new clsProductos();
+            int Codigo = (int)nudCodigo.Value;
+            string Nombre = txtNombre.Text;
+            string Precio = txtPrecio.Text;
+            int Stock = (int)nudStock.Value;
+            string Descripcion = txtNombre.Text;
+            string Categoria = txtNombre.Text;
+
+            producto.agregarProducto(Codigo, Nombre, Precio, Stock, Descripcion, Categoria);
         }
     }
 }

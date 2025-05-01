@@ -177,6 +177,7 @@
             this.btnEditar.TabIndex = 14;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -187,6 +188,7 @@
             this.btnEliminar.TabIndex = 15;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmAbmProductos
             // 
@@ -210,7 +212,7 @@
             this.Controls.Add(this.txtNombre);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAbmProductos";
-            this.Text = "ABM Productos";
+            this.Text = "Verduleria- Stock";
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCodigo)).EndInit();
             this.ResumeLayout(false);

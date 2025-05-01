@@ -63,5 +63,68 @@ namespace LaboratorioProgramacion
 
         }
 
+        public void modificarProducto(int Codigo, string Nombre, string Precio, int Stock, string Descripcion, string Categorias)
+        {
+            using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string query = "UPDATE Productos SET Nombre = ?, Descripcion = ?, Precio = ?, Stock = ?, Categorias = ? WHERE Codigo = ?";
+
+                    using (OleDbCommand comando = new OleDbCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("?", Nombre);
+                        comando.Parameters.AddWithValue("?", Descripcion);
+                        comando.Parameters.AddWithValue("?", Precio);
+                        comando.Parameters.AddWithValue("?", Stock);
+                        comando.Parameters.AddWithValue("?", Categorias);
+                        comando.Parameters.AddWithValue("?", Codigo); // El Código va al final porque está en el WHERE
+
+                        int filas = comando.ExecuteNonQuery();
+                        MessageBox.Show("Producto modificado correctamente");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al conectar o modificar en la base de datos: " + ex.Message);
+                }
+            }
+        }
+
+        public void eliminarProducto(int Codigo)
+        {
+            using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string query = "DELETE FROM Productos WHERE Codigo = ?";
+
+                    using (OleDbCommand comando = new OleDbCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("?", Codigo);
+
+                        int filas = comando.ExecuteNonQuery();
+
+                        if (filas > 0)
+                        {
+                            MessageBox.Show("Producto eliminado correctamente");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el producto con el código especificado");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al eliminar el producto: " + ex.Message);
+                }
+            }
+        }
+
     }
 }
